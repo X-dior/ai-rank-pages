@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI周榜（20260821-0828）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif; background:#f2f3f5; color:#1f2329; padding:20px 14px 40px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  .hd { display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-bottom:3px solid #165DFF; padding:6px 4px 12px; margin-bottom:12px; }
+  .hd h1 { font-size:25px; }
+  .hd .gen { margin-left:auto; font-size:12.5px; color:#86909c; }
+  /* 周观察总结 */
+  .obs { background:#fff; border:1px solid #e5e6eb; border-radius:10px; padding:12px 18px; margin-bottom:14px; }
+  .obs .t { font-size:14px; color:#165DFF; font-weight:800; letter-spacing:1px; margin-bottom:8px; }
+  .obs .item { font-size:14.5px; line-height:1.75; margin-bottom:8px; padding-left:12px; border-left:3px solid #165DFF; }
+  .obs .item:last-child { margin-bottom:0; }
+  .obs .item b { color:#1d2c53; }
+  .obs .act { display:block; margin-top:6px; background:#fffbe8; border-left:3px solid #d25f00; border-radius:0 4px 4px 0; padding:4px 10px; color:#874d00; }
+  .obs a { color:#165DFF; text-decoration:none; }
+  /* tabs */
+  .tabs { display:flex; gap:6px; position:sticky; top:0; z-index:9; background:#f2f3f5; padding:8px 0; }
+  .tab { border:1px solid #d4d7dd; background:#fff; color:#4e5969; border-radius:8px 8px 0 0; padding:8px 26px; font-size:15.5px; font-weight:700; cursor:pointer; }
+  .tab.on { background:#165DFF; border-color:#165DFF; color:#fff; }
+  .panel { display:none; }
+  .panel.on { display:block; }
+  .card { background:#fff; border:1px solid #e5e6eb; border-radius:0 10px 10px 10px; padding:12px; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:960px; }
+  th { background:#eef3ff; color:#1d2c53; font-size:13.5px; padding:8px 9px; text-align:left; white-space:nowrap; border-bottom:2px solid #c9d8ff; }
+  td { font-size:13.5px; padding:7px 9px; border-bottom:1px solid #f0f1f3; vertical-align:top; line-height:1.5; }
+  tr:hover td { background:#f7f9ff; }
+  tr.new td { background:#f6ffed; }
+  tr.new:hover td { background:#effbe6; }
+  .no { width:42px; text-align:center; }
+  .no b { display:block; font-size:15px; color:#165DFF; }
+  .no .trend { display:inline-block; margin-top:2px; font-size:10.5px; color:#86909c; background:#f2f3f5; border-radius:4px; padding:0 4px; }
+  tr.new .no b { color:#00b42a; }
+  tr.new .trend { color:#00b42a; background:#e8ffea; }
+  .co { width:92px; font-weight:700; }
+  .prod { width:168px; }
+  .prod .pn { font-weight:700; display:block; }
+  .prod a.off { color:inherit; text-decoration:none; border-bottom:1px dashed #165DFF; }
+  .prod a.off:hover { color:#165DFF; }
+  .prod a.off sup { font-size:10px; color:#165DFF; margin-left:1px; }
+  .prod .tags { margin-top:3px; white-space:nowrap; }
+  .prod .tags span { display:inline-block; background:#f2f3f5; color:#4e5969; border-radius:4px; padding:0 7px; font-size:11.5px; margin-right:4px; }
+  .prod .tags .nv { color:#00b42a; background:#e8ffea; }
+  .desc { }
+  .desc b { color:#1f2329; }
+  .desc .sl { margin-left:8px; white-space:nowrap; }
+  .desc .sl a { font-size:12px; color:#165DFF; text-decoration:none; border-bottom:1px dashed #9dc2ff; margin-right:7px; }
+  .sig { }
+  .sig b { color:#d25f00; }
+  .sig .ovs { display:inline-block; margin-left:4px; font-size:11px; color:#165DFF; background:#eef3ff; border-radius:4px; padding:0 5px; vertical-align:1px; }
+  .cmt { width:200px; color:#4e5969; font-size:13px; }
+  .tnote { background:#fffbe8; border:1px solid #ffe58f; border-radius:8px; margin-top:10px; padding:9px 14px; font-size:13.5px; color:#614700; line-height:1.7; }
+  /* 底部备注 */
+  .meta { background:#fff; border:1px solid #e5e6eb; border-radius:10px; padding:14px 18px; margin-top:14px; }
+  .meta .row { display:flex; gap:10px; font-size:14px; line-height:1.75; }
+  .meta .k { flex:0 0 78px; color:#4e5969; font-weight:700; }
+  .meta .v { flex:1; }
+  .foot { text-align:center; color:#86909c; font-size:12.5px; margin-top:14px; }
+  @media print { .tabs{display:none} .panel{display:block!important; page-break-inside:avoid} .card{border-radius:0} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hd">
+    <h1>AI周榜（20260821-0828）</h1>
+    <span class="gen">2026-W35 · 生成 2026-08-28 · 仅供内部参考</span>
+  </div>
+
+  <!-- 周观察总结 -->
+  <div class="obs">
+    <div class="t">📌 周观察总结</div>
+    <div class="item"><b>①「平台内置 AI」取代「单点工具」成为本周最强共振</b>：TapTap 开放 Maker MCP、Epic 官宣 UEFN MCP、抖音/小红书 AI 游戏容器、K399 一句话生成游戏、233工坊月度过审 500 款——五个独立信源指向同一件事：AI 内容生产正被内嵌进平台与编辑器（<a href="https://cgames.com/contents/2/12622.html">竞核</a>）。
+      <span class="act">可行动：用现成小游戏资产在抖音/小红书容器占位试水；给素材生产线接一条 MCP/Agent 化管线。</span></div>
+    <div class="item"><b>② AI 开始用财报数字说话</b>：游族净利 +403.8%、网龙研发费 -23.4%、掌阅 AI 短剧半年千余部、美图 MVLAND ARPPU 为综合值 13 倍——降本与增收都有了可对标的公开口径。
+      <span class="act">可行动：AI 素材管线考核从「人效提升」改为「单素材成本 / 单创意 ARPPU」硬指标。</span></div>
+  </div>
+
+  <!-- 榜单分栏 -->
+  <div class="tabs">
+    <div class="tab on" data-p="g">AI+游戏</div>
+    <div class="tab" data-p="t">AI+工具</div>
+  </div>
+
+  <!-- AI+游戏 -->
+  <div class="panel on" id="g"><div class="card">
+    <table>
+      <tr><th class="no">序号</th><th class="co">公司</th><th class="prod">产品</th><th class="desc">说明</th><th class="sig">信号</th><th class="cmt">速评</th></tr>
+      <tr><td class="no"><b>1</b><span class="trend">BASE</span></td><td class="co">字节跳动 / 小红书</td><td class="prod"><span class="pn">抖音「互动空间」×小红书「小工具」</span><span class="tags"><span>平台AI游戏容器</span></span></td><td class="desc">平台内置的 AI 小游戏容器：创作者在线生成、用户即点即玩，抖音侧已有「互动空间广场」分发<span class="sl"><a href="https://youxichaguan.com/archives/205729">茶馆</a></span></td><td class="sig">小红书 8/18 全量上线，门槛粉丝 1k；案例小游戏单日 <b>2000 人</b>游玩；官方预告 IAA 方向</td><td class="cmt">新容器=早期低成本流量洼地——用现成小游戏资产先占位，变现落地吃头波</td></tr>
+      <tr class="new"><td class="no"><b>2</b><span class="trend">新</span></td><td class="co">月之暗面</td><td class="prod"><span class="pn">K399</span><span class="tags"><span>游戏生成平台</span></span></td><td class="desc">网页游戏生成平台：输入一句话生成可玩小游戏（Kimi K3 驱动）<span class="sl"><a href="https://youxichaguan.com/archives/205729">茶馆</a></span></td><td class="sig">7/16 Kimi K3 后上线——大模型公司首次以游戏产品形态直接做 C 端平台</td><td class="cmt">与模型层、容器层形成完整链条——试玩广告/落地页成本趋零，早接入早积累模板壁垒</td></tr>
+      <tr><td class="no"><b>3</b><span class="trend">BASE</span></td><td class="co">爱诗科技</td><td class="prod"><span class="pn"><a class="off" href="https://pixverse.ai">Zero Mark / 畸变回声 / 月之战<sup>↗</sup></a></span><span class="tags"><span>AI互动影游</span></span></td><td class="desc">世界模型预置视频分支＋实时 AI 生成的互动影游，玩家以选项/文字/语音/QTE 推进剧情<span class="sl"><a href="https://www.360kuai.com/pc/98b79221c4218c2fb">FoST未来叙事</a></span></td><td class="sig">PixVerse R2「Scaling」发布，三款影游样板间官网开放预约</td><td class="cmt">分支剧情+数字人实时交互一旦开放，试玩广告与落地页实时个性化就有现成引擎</td></tr>
+      <tr><td class="no"><b>4</b><span class="trend">BASE</span></td><td class="co">腾讯</td><td class="prod"><span class="pn"><a class="off" href="https://cf.qq.com">绿洲启元<sup>↗</sup></a></span><span class="tags"><span>UGC+AI生成</span></span></td><td class="desc">CF 系 UGC 地图平台：编辑器做创意地图，AI 直接生成动作/角色/图片/地形<span class="sl"><a href="https://news.yxrb.net/2026/0828/7509.html">游戏日报</a></span></td><td class="sig">日活 <b>5800万</b>、创意地图 <b>100万张</b>；AI 生成能力即将全面放开</td><td class="cmt">UGC+AI=玩法验证成本坍塌——先平台低成本测玩法再决定买量</td></tr>
+      <tr><td class="no"><b>5</b><span class="trend">BASE</span></td><td class="co">游族网络</td><td class="prod"><span class="pn"><a class="off" href="https://www.yoozoo.com">YOOZOO.AI 矩阵<sup>↗</sup></a></span><span class="tags"><span>AI全家桶</span></span></td><td class="desc">厂商内部 AI 全家桶：大模型聚合＋AI 广告素材创作＋YOOSpark 对话式做游戏＋万象画布<span class="sl"><a href="https://youxichaguan.com/archives/206228">茶馆</a></span></td><td class="sig">净利 <b>+403.8%</b>；AI 广告素材平台写进中报，内部 Token 无限额</td><td class="cmt">「AI降本增收」财报级背书；素材平台与我方投放链路同类，值得拆解对标</td></tr>
+      <tr><td class="no"><b>6</b><span class="trend">BASE</span></td><td class="co">网龙</td><td class="prod"><span class="pn"><a class="off" href="https://www.nd.com.cn">233工坊<sup>↗</sup></a></span><span class="tags"><span>AI游戏编辑器</span></span></td><td class="desc">拖拽式 AI 游戏编辑器＋创作者经济：零代码拼装小游戏、过审分账变现<span class="sl"><a href="https://news.yxrb.net/2026/0828/7509.html">游戏日报</a> <a href="https://www.360kuai.com/pc/9e9080df616524274">智通财经</a></span></td><td class="sig">7月单月过审 <b>500+款</b>；网龙研发费 <b>-23.4%</b>；创作者月入 10万+ 者两位数</td><td class="cmt">小游戏供给工业化，创意寿命缩短——素材与玩法迭代速度成买量核心变量</td></tr>
+    </table>
+    <div class="tnote"><b>表单备注</b>：收 AI 玩法为核心的游戏产品（AI NPC/Agent 玩法、AI 生成内容、AI 降本发行），国内海外都收；序号处绿底「新」=本周新面孔（下期起对照本期计算 ↑↓）。</div>
+  </div></div>
+
+  <!-- AI+工具 -->
+  <div class="panel" id="t"><div class="card">
+    <table>
+      <tr><th class="no">序号</th><th class="co">公司</th><th class="prod">产品</th><th class="desc">说明</th><th class="sig">信号</th><th class="cmt">速评</th></tr>
+      <tr><td class="no"><b>1</b><span class="trend">BASE</span></td><td class="co">爱诗科技</td><td class="prod"><span class="pn"><a class="off" href="https://pixverse.ai">PixVerse R2<sup>↗</sup></a></span><span class="tags"><span>视频</span></span></td><td class="desc">世界模型视频生成：文/图生视频，R2 支持多镜头一致性与可交互叙事<span class="sl"><a href="https://www.aicpb.com/ai-rankings/products/ai-video-generators">AICPB</a> <a href="https://www.yfchuhai.com/article/10228866.html">扬帆出海</a></span></td><td class="sig">R2 开放预约；AICPB 6月榜 MoM <b>-20.5%</b>、月活 1742万（7月出海榜，两套口径）<span class="ovs">海外榜</span></td><td class="cmt">纯生成工具留存承压、向交互叙事转型——转型窗口正是素材人的机会</td></tr>
+      <tr><td class="no"><b>2</b><span class="trend">BASE</span></td><td class="co">心动公司</td><td class="prod"><span class="pn"><a class="off" href="https://www.taptap.cn">TapTap制造 Maker MCP<sup>↗</sup></a></span><span class="tags"><span>代码</span></span></td><td class="desc">游戏编辑器＋MCP 开放：让 Claude/Cursor 等 Agent 直接操作游戏工程，网页版可用<span class="sl"><a href="https://news.yxrb.net/2026/0828/7509.html">游戏日报</a></span></td><td class="sig">8/11 起无门槛开放测试，新用户送 1000 积分 Token</td><td class="cmt">编辑器接 MCP=「一人+Agent」管线成型，外包定制价格体系会被重估</td></tr>
+      <tr><td class="no"><b>3</b><span class="trend">BASE</span></td><td class="co">Epic Games</td><td class="prod"><span class="pn">UEFN Unreal MCP</span><span class="tags"><span>代码</span></span></td><td class="desc">虚幻编辑器官方 AI 接口：Agent（Claude Code/Codex/Cursor）可对接 UE5.8 工程开发<span class="sl"><a href="https://news.yxrb.net/2026/0828/7509.html">游戏日报</a></span></td><td class="sig">8/20 官宣，随 UE5.8 Toolset Registry 提供<span class="ovs">海外</span></td><td class="cmt">引擎厂商官方下场定义 AI 接口标准——海外 UGC 工具链标准化</td></tr>
+      <tr class="new"><td class="no"><b>4</b><span class="trend">新</span></td><td class="co">智象未来</td><td class="prod"><span class="pn"><a class="off" href="https://www.hidreamai.com">HiDream-O1-World<sup>↗</sup></a></span><span class="tags"><span>3D世界模型</span></span></td><td class="desc">可操控 3D 世界模型：AI 视频从平面生成升级为可进入、可操控的空间<span class="sl"><a href="https://www.yfchuhai.com/article/10228866.html">扬帆出海</a></span></td><td class="sig">8/17 发布；同赛道集体落地（谷歌/World Labs/腾讯混元/阿里/字节）<span class="ovs">海外</span></td><td class="cmt">「可交互场景」成本坍塌——中期重写捕鱼/棋牌 3D 场景与互动广告生产</td></tr>
+      <tr><td class="no"><b>5</b><span class="trend">BASE</span></td><td class="co">美图公司</td><td class="prod"><span class="pn"><a class="off" href="https://kaipai.com">开拍 / MVLAND<sup>↗</sup></a></span><span class="tags"><span>素材生成</span></span></td><td class="desc">口播视频 Agent 工作流＋MV 创作平台：面向保险/教培/大健康获客的成套口播生产<span class="sl"><a href="https://www.qbitai.com/2026/08/479895.html">量子位</a></span></td><td class="sig">开拍 MAU 同比 <b>+100%</b>、付费用户 <b>+150%</b>；MVLAND ARPPU=综合值 <b>13倍</b></td><td class="cmt">口播打法可从保险/教培平移到游戏素材；垂直工作流天花板远高于通用工具</td></tr>
+      <tr><td class="no"><b>6</b><span class="trend">BASE</span></td><td class="co">智象未来</td><td class="prod"><span class="pn"><a class="off" href="https://vivago.ai">Vivago<sup>↗</sup></a></span><span class="tags"><span>视频·出海</span></span></td><td class="desc">社媒创作者一站式 AI 创作平台（出海）：热点→快速上 AI 功能→链式传播<span class="sl"><a href="https://www.yfchuhai.com/article/10228866.html">扬帆出海</a></span></td><td class="sig">连续两月登顶 AICPB 出海增速榜；覆盖 120+ 国家；估值破 <b>10亿美元</b><span class="ovs">海外榜</span></td><td class="cmt">TikTok 渠运+热点功能化可抄；单渠道依赖是软肋</td></tr>
+      <tr class="new"><td class="no"><b>7</b><span class="trend">新</span></td><td class="co">网龙</td><td class="prod"><span class="pn">目鱼AI</span><span class="tags"><span>创作+教育AI</span></span></td><td class="desc">内容创作＋教育 AI 平台：故事构思/剧情扩展/角色设定/漫画分镜/影像生成<span class="sl"><a href="https://www.360kuai.com/pc/9e9080df616524274">智通财经</a></span></td><td class="sig">中报确认「正式上线测试」，移动端海外市场上架<span class="ovs">出海</span></td><td class="cmt">游戏公司 AI 能力 C 端化第二曲线，海外冷启动打法可借船</td></tr>
+      <tr><td class="no"><b>8</b><span class="trend">BASE</span></td><td class="co">快手</td><td class="prod"><span class="pn"><a class="off" href="https://klingai.com">可灵AI<sup>↗</sup></a></span><span class="tags"><span>视频</span></span></td><td class="desc">视频生成工具（文/图生视频、多镜头控制），买量素材主力供给端之一<span class="sl"><a href="https://www.yfchuhai.com/article/10228866.html">扬帆出海</a></span></td><td class="sig">月活 <b>1026万</b>、环比 <b>-22.16%</b>（AICPB 7月出海榜第20）<span class="ovs">海外榜</span></td><td class="cmt">尝鲜流量退潮——生成成本议价空间扩大，利好素材端</td></tr>
+      <tr><td class="no"><b>9</b><span class="trend">BASE</span></td><td class="co">科大讯飞</td><td class="prod"><span class="pn">讯飞智作「一句话成片」</span><span class="tags"><span>视频</span></span></td><td class="desc">数字人口播视频 Agent：一句话驱动 文稿→数字人→成片→精剪，多平台一键分发<span class="sl"><a href="https://www.360kuai.com/pc/98726117055bce9a3">中国网</a></span></td><td class="sig">8/28 报道上线 Agent 工作台；主打企业营销、电商批量种草</td><td class="cmt">批量种草与素材工业化直接对口（通稿性质，能力以上手为准）</td></tr>
+      <tr><td class="no"><b>10</b><span class="trend">BASE</span></td><td class="co">掌阅科技</td><td class="prod"><span class="pn"><a class="off" href="https://www.zhangyue.com">泡漫<sup>↗</sup></a></span><span class="tags"><span>视频</span></span></td><td class="desc">AI 短剧全产业链平台：剧本创意→视觉制作→成片交付，「IP+工具+分发」一体<span class="sl"><a href="https://www.360kuai.com/pc/9dd41a8018d98871c">同壁财经</a></span></td><td class="sig">中报：半年上线 <b>千余部</b> AI短剧，为核心增长引擎</td><td class="cmt">千部/半年=AI短剧工业化；管线就是素材流水线近亲</td></tr>
+      <tr><td class="no"><b>11</b><span class="trend">BASE</span></td><td class="co">核炬科技</td><td class="prod"><span class="pn">核炬AI发行平台</span><span class="tags"><span>投放</span></span></td><td class="desc">中小团队全渠道发行基础设施：聚合 SDK＋AI 发行平台＋垂类 AI Agents<span class="sl"><a href="http://www.gamelook.com.cn/2026/08/600865/">GameLook</a></span></td><td class="sig">8/25 AI游戏基地开业（徐汇第5个游戏孵化器）</td><td class="cmt">聚合SDK/发行平台省渠道接入成本，关注入驻条件与分成</td></tr>
+      <tr><td class="no"><b>12</b><span class="trend">BASE</span></td><td class="co">游族网络</td><td class="prod"><span class="pn"><a class="off" href="https://www.yoozoo.com">游族AI广告素材平台<sup>↗</sup></a></span><span class="tags"><span>投放</span></span></td><td class="desc">投放素材生产线：创意→视频生成全链路，与 YOOZOO.AI 配套<span class="sl"><a href="https://youxichaguan.com/archives/206228">茶馆</a></span></td><td class="sig">随中报披露，写进财报的 AI 投入产出口径</td><td class="cmt">上市厂商把素材生产自建成平台写进财报——自建 vs 外采参照</td></tr>
+    </table>
+    <div class="tnote"><b>表单备注</b>：产品下标签为六类（素材生成/视频/3D/投放/代码/数据分析），游戏与内容行业向优先；通用 ChatBot 每期限 1 条（本期无过硬信号未收录）；信号中 <b>「海外榜/海外/出海」标签</b>=信号源或产品来自海外榜单与海外市场，后续海外信号加重权重。</div>
+  </div></div>
+
+  <!-- 底部备注 -->
+  <div class="meta">
+    <div class="row"><span class="k">榜单口径</span><span class="v">增量信号榜——新上榜 · 增速异动 · 报道密度的复合强度排序，非权威 MAU 榜；优先级：<b>新发布 &gt; 硬数据 &gt; 权威月榜变化 &gt; 报道密度</b>；统计周期 <b>2026-08-21 17:00 → 2026-08-28 12:40</b>（窗口内报道即计为周信号，正文已标事件原始日期）；<b>海外信号侧重</b>（出海增速榜、海外新发布与海外市场表现加权）</span></div>
+    <div class="row"><span class="k">权威锚点</span><span class="v">AICPB 6月版·AI视频生成榜 ｜ AICPB 7月出海增速榜（扬帆出海转引）——月更且滞后 1-2 个月，仅做校准基准，不参与周信号排序</span></div>
+    <div class="row"><span class="k">变化标记</span><span class="v">新 本周新面孔（首次出现，序号处绿底标注） / NEW 新入榜 / ↑n 上升 / ↓n 下降 / — 持平 / BASE 首期基线（除新面孔外本期全部 BASE，下期起对照本期计算）</span></div>
+  </div>
+
+  <div class="foot">AI周榜（20260821-0828） · 2026-W35 · 数据基于公开报道，仅供内部参考</div>
+</div>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.onclick = function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+      document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+      document.getElementById(t.dataset.p).classList.add('on');
+    };
+  });
+</script>
+</body>
+</html>

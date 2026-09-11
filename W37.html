@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI周榜（20260904-20260911）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif; background:#f2f3f5; color:#1f2329; padding:20px 14px 40px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  .hd { display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-bottom:3px solid #165DFF; padding:6px 4px 12px; margin-bottom:12px; }
+  .hd h1 { font-size:25px; }
+  .hd .gen { margin-left:auto; font-size:12.5px; color:#86909c; }
+  /* 周观察总结 */
+  .obs { background:#fff; border:1px solid #e5e6eb; border-radius:10px; padding:12px 18px; margin-bottom:14px; }
+  .obs .t { font-size:14px; color:#165DFF; font-weight:800; letter-spacing:1px; margin-bottom:8px; }
+  .obs .item { font-size:14.5px; line-height:1.75; margin-bottom:8px; padding-left:12px; border-left:3px solid #165DFF; }
+  .obs .item:last-child { margin-bottom:0; }
+  .obs .item b { color:#1d2c53; }
+  .obs .act { display:block; margin-top:6px; background:#fffbe8; border-left:3px solid #d25f00; border-radius:0 4px 4px 0; padding:4px 10px; color:#874d00; }
+  .obs a { color:#165DFF; text-decoration:none; }
+  /* tabs */
+  .tabs { display:flex; gap:6px; position:sticky; top:0; z-index:9; background:#f2f3f5; padding:8px 0; }
+  .tab { border:1px solid #d4d7dd; background:#fff; color:#4e5969; border-radius:8px 8px 0 0; padding:8px 26px; font-size:15.5px; font-weight:700; cursor:pointer; }
+  .tab.on { background:#165DFF; border-color:#165DFF; color:#fff; }
+  .panel { display:none; }
+  .panel.on { display:block; }
+  .card { background:#fff; border:1px solid #e5e6eb; border-radius:0 10px 10px 10px; padding:12px; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:960px; }
+  th { background:#eef3ff; color:#1d2c53; font-size:13.5px; padding:8px 9px; text-align:left; white-space:nowrap; border-bottom:2px solid #c9d8ff; }
+  td { font-size:13.5px; padding:7px 9px; border-bottom:1px solid #f0f1f3; vertical-align:top; line-height:1.5; }
+  tr:hover td { background:#f7f9ff; }
+  tr.new td { background:#f6ffed; }
+  tr.new:hover td { background:#effbe6; }
+  .no { width:42px; text-align:center; }
+  .no b { display:block; font-size:15px; color:#165DFF; }
+  .no .trend { display:inline-block; margin-top:2px; font-size:10.5px; color:#86909c; background:#f2f3f5; border-radius:4px; padding:0 4px; }
+  tr.new .no b { color:#00b42a; }
+  tr.new .trend { color:#00b42a; background:#e8ffea; }
+  .co { width:92px; font-weight:700; }
+  .prod { width:168px; }
+  .prod .pn { font-weight:700; display:block; }
+  .prod a.off { color:inherit; text-decoration:none; border-bottom:1px dashed #165DFF; }
+  .prod a.off:hover { color:#165DFF; }
+  .prod a.off sup { font-size:10px; color:#165DFF; margin-left:1px; }
+  .prod .tags { margin-top:3px; white-space:nowrap; }
+  .prod .tags span { display:inline-block; background:#f2f3f5; color:#4e5969; border-radius:4px; padding:0 7px; font-size:11.5px; margin-right:4px; }
+  .prod .tags .nv { color:#00b42a; background:#e8ffea; }
+  .desc { }
+  .desc b { color:#1f2329; }
+  .desc .sl { margin-left:8px; white-space:nowrap; }
+  .desc .sl a { font-size:12px; color:#165DFF; text-decoration:none; border-bottom:1px dashed #9dc2ff; margin-right:7px; }
+  .sig { }
+  .sig b { color:#d25f00; }
+  .sig .ovs { display:inline-block; margin-left:4px; font-size:11px; color:#165DFF; background:#eef3ff; border-radius:4px; padding:0 5px; vertical-align:1px; }
+  .cmt { width:200px; color:#4e5969; font-size:13px; }
+  .tnote { background:#fffbe8; border:1px solid #ffe58f; border-radius:8px; margin-top:10px; padding:9px 14px; font-size:13.5px; color:#614700; line-height:1.7; }
+  .tnote a { color:#165DFF; text-decoration:none; border-bottom:1px dashed #d8c07a; }
+  /* 底部备注 */
+  .meta { background:#fff; border:1px solid #e5e6eb; border-radius:10px; padding:14px 18px; margin-top:14px; }
+  .meta .row { display:flex; gap:10px; font-size:14px; line-height:1.75; }
+  .meta .k { flex:0 0 78px; color:#4e5969; font-weight:700; }
+  .meta .v { flex:1; }
+  .foot { text-align:center; color:#86909c; font-size:12.5px; margin-top:14px; }
+  @media print { .tabs{display:none} .panel{display:block!important; page-break-inside:avoid} .card{border-radius:0} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hd">
+    <h1>AI周榜（20260904-20260911）</h1>
+    <span class="gen">2026-W37 · 生成 2026-09-11 · 仅供内部参考</span>
+  </div>
+
+  <!-- 周观察总结 -->
+  <div class="obs">
+    <div class="t">📌 周观察总结</div>
+    <div class="item"><b>① AI 互动入口从「小游戏容器」升维到「Agent 容器」，平台与大厂全部亲自下场</b>：微信内测小微 AI 社交（两个 Agent 先聊、用户只拍板，<a href="https://www.163.com/dy/article/L691G72D051196HN.html">差评/每经</a>）、米哈游在《雨之城》内测 AGC 平台重建 UGC 生态（<a href="http://www.gamelook.com.cn/2026/09/601520/">GameLook</a>）、WorkBuddy×和平精英把 AI 助手变游戏搭子（<a href="https://youxichaguan.com/archives/207571">茶馆</a>）——分发之争从"谁有小游戏位"升级为"谁的 Agent 驻留在用户关系链里"。反向注脚：蔡浩宇 Anuttacon 的 AI 游戏成品路线 8 月已现退潮（AnuNeko 关停，<a href="https://www.jiemian.com/article/14881565.html">界面</a> 背景），本周童欣离队转投 Meshy（<a href="https://finance.sina.com.cn/stock/t/2026-09-07/doc-iniqyrka5585550.shtml">新浪</a>、<a href="https://cgames.com/contents/2/12831.html">竞核</a>）——「AI 玩法成品」退潮、「AI 互动基建」涨潮，人才流向是同一件事的两次确认。
+      <span class="act">可行动：轻互动 Agent 素材（AI 社交式落地页/AI 陪聊式客服）开一个小流量试点；跟踪米哈游 AGC 开放节奏，评估"玩家自产素材"对品牌二创量的补充价值。</span></div>
+    <div class="item"><b>② 游戏资本全面转向 AI 上游：从「投游戏」到「投工具」，广告侧同步 AI 管线化</b>：茶馆盘点 60+ 只产业基金、游戏厂商集体转身做"AI 金主"（三七开出最高 6 万月薪招 AI/半导体投资经理，<a href="https://youxichaguan.com/archives/207627">茶馆</a>）；VAST 半年内集齐四三九九/贪玩/巨人/完美/三七/延趣等厂商股东（<a href="https://youxichaguan.com/archives/206766">茶馆</a>）；Meshy 客户名单里站着网易/三七/Nexon（<a href="https://www.donews.com/news/detail/4/6700189.html">DoNews</a>）——3D/视频生成工具成为行业"新基建"，连买量厂商都在押上游。叠加腾讯把"AI 工具"列进长期战略三支柱（<a href="https://youxichaguan.com/archives/206886">茶馆</a>）、SkyProduction 用模型限免抢客（<a href="https://www.qbitai.com/2026/09/486052.html">量子位</a>）、蓝色光标把达人营销全链路交给 AI 原生平台（<a href="https://www.qbitai.com/2026/09/486651.html">量子位</a>），工具赛道的游戏/营销行业定制化是主战场，价格战与渠道重构已同时开打。
+      <span class="act">可行动：3D 生成选型立项（Meshy 7／Tripo P2.0 双雄对比，按"引擎可用/可绑/可编辑"验收）；把厂商产业基金的投向当作赛道风向标纳入月度观察；海外达人渠道预算试接一家 AI 管线化平台做小规模对照。</span></div>
+  </div>
+
+  <!-- 榜单分栏 -->
+  <div class="tabs">
+    <div class="tab on" data-p="g">AI+游戏</div>
+    <div class="tab" data-p="t">AI+工具</div>
+  </div>
+
+  <!-- AI+游戏 -->
+  <div class="panel on" id="g"><div class="card">
+    <table>
+      <tr><th class="no">序号</th><th class="co">公司</th><th class="prod">产品</th><th class="desc">说明</th><th class="sig">信号</th><th class="cmt">速评</th></tr>
+      <tr class="new"><td class="no"><b>1</b><span class="trend">新</span></td><td class="co">米哈游</td><td class="prod"><span class="pn">《雨之城》AGC 平台</span><span class="tags"><span>游戏内AI视频创作平台</span></span></td><td class="desc">新游未上线、AI 创作平台先行：《雨之城》内测 AI 视频创作平台「AGC 平台」，意图=在旗舰新品里自建 UGC 视频生态（自编自导自看），冲淡"带节奏锐评"类二创<span class="sl"><a href="http://www.gamelook.com.cn/2026/09/601520/">GameLook</a></span></td><td class="sig">流出样品质量属 AI 视频<b>第一梯队</b>；背景：AI 短剧已进省级卫视黄金档（《后西游记》湖南卫视首播收视率<b>省级卫视同时段第一</b>）、Seedance2.0/可灵已成厂商广告素材"新神器"</td><td class="cmt">把 AI 视频生成器直接长在游戏里=官方下场经营 UGC 供给——二游最缺的"自来水"内容池第一次有了平台化生产工具；"素材工业化"正向"玩家自产素材"外溢，品牌二创量的成本曲线继续下移</td></tr>
+      <tr class="new"><td class="no"><b>2</b><span class="trend">新</span></td><td class="co">腾讯</td><td class="prod"><span class="pn">微信「小微 AI 社交」（内测）</span><span class="tags"><span>Agent对话式社交</span></span></td><td class="desc">被曝内测：用户的小微可直接找好友的小微对话——告知诉求后由 AI 前去对方 AI 沟通，两个 AI <b>先行交流</b>带回结果、关键节点用户拍板；内容只在"小微"内进行、不进个人对话框<span class="sl"><a href="https://www.163.com/dy/article/L691G72D051196HN.html">差评/每经</a></span></td><td class="sig">AI 社交从"代发消息"进化为 <b>Agent 对 Agent</b> 协商——流量分发层之上又多了一层"Agent 协商层"</td><td class="cmt">Agent 替用户社交=AI 互动从"小游戏容器"升维到"关系链容器"；谁的小微先接入服务（约饭/组局/咨询）谁吃到第一波</td></tr>
+      <tr class="new"><td class="no"><b>3</b><span class="trend">新</span></td><td class="co">腾讯</td><td class="prod"><span class="pn"><a class="off" href="https://workbuddy.qq.com">WorkBuddy<sup>↗</sup></a> ×《和平精英》联动</span><span class="tags"><span>AI助手×游戏跨界</span></span></td><td class="desc">AI 办公工具首次试水游戏联名：上线「和平精英吉事通」AI 专家（场外"战术顾问"：枪械/地图/配队/版本活动一问即答）＋限定主题外观与桌宠<span class="sl"><a href="https://youxichaguan.com/archives/207571">茶馆</a></span></td><td class="sig">《和平精英》<b>首次</b>与 AI 办公产品深度跨界——AI 助手从办公场景切入玩家"第二战场"</td><td class="cmt">AI 助手做"游戏搭子"是获客新姿势——办公 AI 的留存焦虑反向找游戏 IP 借流量；游戏侧则白得一个场外服务入口，此模式可复制（版本查询/攻略/客服三合一）</td></tr>
+      <tr><td class="no"><b>4</b><span class="trend">↓3</span></td><td class="co">字节 / 小红书 / B站 / 快手</td><td class="prod"><span class="pn">抖音互动空间×小红书小工具×B站 Toy×快手</span><span class="tags"><span>平台AI游戏容器</span></span></td><td class="desc">平台 AI 游戏容器战（战事延续）：竞核 9/6 周报以「小红书抖快B开战 AI 游戏」为题复盘，四平台混战延续至本周<span class="sl"><a href="https://cgames.com/contents/2/12829.html">竞核</a></span></td><td class="sig">窗口内无新增量化数据（上期口径：小红书 TOP100 小工具累计使用<b>超1700万人次</b>）——本期以战事延续为主信号，强度回落</td><td class="cmt">无新数据的一周，观察位保留；等下一家平台出手或首份运营数据（快手上批创作者、B站 Toy 数据）</td></tr>
+    </table>
+    <div class="tnote"><b>表单备注</b>：收录范围=AI 玩法为核心的游戏产品与 AI 互动内容生态动向，国内海外都收；绿底「新」=本周新面孔；变化标记相对上期周榜（W36，2026-09-04）。</div>
+  </div></div>
+
+  <!-- AI+工具 -->
+  <div class="panel" id="t"><div class="card">
+    <table>
+      <tr><th class="no">序号</th><th class="co">公司</th><th class="prod">产品</th><th class="desc">说明</th><th class="sig">信号</th><th class="cmt">速评</th></tr>
+      <tr><td class="no"><b>1</b><span class="trend">NEW</span></td><td class="co">Meshy</td><td class="prod"><span class="pn"><a class="off" href="https://www.meshy.ai">Meshy<sup>↗</sup></a></span><span class="tags"><span>3D</span></span></td><td class="desc">前微软亚研院全球研究合伙人<b>童欣</b>（图形学 25 年、SIGGRAPH 论文 60 余篇）离开 Anuttacon 加盟任<b>首席科学家</b>，下一步做「实时互动世界」<span class="sl"><a href="https://finance.sina.com.cn/stock/t/2026-09-07/doc-iniqyrka5585550.shtml">新浪/硅星人</a> <a href="https://www.donews.com/news/detail/4/6700189.html">DoNews</a> <a href="https://cgames.com/contents/2/12831.html">竞核</a></span></td><td class="sig">注册用户<b>超1200万</b>、累计生成 3D 模型<b>逾1亿个</b>、ARR 为一年前的<b>12倍</b>、以<b>15亿美元</b>估值完成<b>近4亿美元</b> B 轮；客户含 Nexon、网易游戏、三七互娱；Meshy 7 几何对齐自测三项 <b>81.0%/79.7%/59.8%</b>；旗下 Meshy Game Studio 曾展示 AI 原生游戏《Black Box: Infinite Arsenal》<span class="ovs">海外榜</span></td><td class="cmt">图形学顶级研究者从 AI 游戏创业公司流向 AI 3D 工具公司，人才用脚投票方向="给行业造工具"优于"做 AI 游戏成品"；ARR×12＋游戏客户名单说明 3D 生成已在生产管线付费，"实时互动世界"若落地=互动素材的实时 3D 供给</td></tr>
+      <tr class="new"><td class="no"><b>2</b><span class="trend">新</span></td><td class="co">OpenAI</td><td class="prod"><span class="pn">ChatGPT Images 2.5</span><span class="tags"><span>素材生成</span></span></td><td class="desc">9/10 发布；支持图片批注指定修改处＋<b>@Sketch 草图当参考图</b>（手画构图→直出成图）<span class="sl"><a href="https://www.qbitai.com/2026/09/486684.html">量子位</a></span></td><td class="sig">生成延迟最高<b>降低50%</b>、参考图人物特征更稳、多轮修改前后细节一致性提升——"改图"首次接近真·修图工作流<span class="ovs">海外</span></td><td class="cmt">延迟减半＋草图参考直出，把"创意草图→成品素材"压到一步——买量素材的候选量生产再提速；与可灵/Seedance 的视频侧提速合流，素材试错成本继续坍塌</td></tr>
+      <tr><td class="no"><b>3</b><span class="trend">↓2</span></td><td class="co">VAST（三启万物）</td><td class="prod"><span class="pn"><a class="off" href="https://www.tripo3d.ai">Tripo P2.0<sup>↗</sup></a></span><span class="tags"><span>3D</span></span></td><td class="desc">茶馆深度评测：全球首个<b>原生四边面拓扑</b>基座模型——四边面在生成中"直接长出"而非事后重拓扑，直出可进引擎/可编辑/可拆分的工业资产<span class="sl"><a href="https://youxichaguan.com/archives/206766">茶馆</a></span></td><td class="sig">绕过流水线里"最贵最脏"的重拓扑工序（单资产手工常耗时数小时到数天）；游戏厂商股东名单再确认：四三九九/贪玩/巨人网络（A3轮）＋完美世界/三七互娱/延趣（B/B+轮）；融资额为上期已报（B+B+合计约30亿、半年约50亿）</td><td class="cmt">上期融资巨浪后的验证期——评测确认"直出工业资产"路线成立，重拓扑（最贵体力活）被绕过；与 Meshy 双雄对垒，选型按"引擎可用/可绑/可编辑"三条门槛验收</td></tr>
+      <tr class="new"><td class="no"><b>4</b><span class="trend">新</span></td><td class="co">高德（阿里巴巴）</td><td class="prod"><span class="pn">ABot-Earth 0.7</span><span class="tags"><span>3D</span><span>世界模型</span></span></td><td class="desc">9/10 发布：「全球首个」3D 原生城市世界模型——时空数据端到端直出 <b>3DGS（三维高斯泼溅）</b>格式城市场景，支持星球→街景一体化全尺寸 AI 生成、可连续进入自由探索实时交互<span class="sl"><a href="https://www.qbitai.com/2026/09/486900.html">量子位</a></span></td><td class="sig">覆盖<b>超196个</b>国家和地区，号称当前覆盖范围最广的数字地球</td><td class="cmt">世界模型本周从"实验室演示"走向"覆盖 196 国的基建"（W36 Atlas/Project Eden 线的延续）——城市级 3D 场景生成中期利好开放世界与互动广告的场景成本，先盯 API 开放节奏</td></tr>
+      <tr><td class="no"><b>5</b><span class="trend">NEW</span></td><td class="co">LoopMe</td><td class="prod"><span class="pn"><a class="off" href="https://loopme.com">LoopMe PurchaseLoop<sup>↗</sup></a></span><span class="tags"><span>投放</span></span></td><td class="desc">升级「下端漏斗效果」方案：以 AI 消费预测连接品牌曝光与转化，主打 <b>CPI/CPA</b> 深度优化、破品效割裂<span class="sl"><a href="https://news.yxrb.net/2026/0907/7551.html">游戏日报</a></span></td><td class="sig">切入 ATT 隐私新规后信号缺失、传统渠道获客成本持续攀升的痛点——品牌广告预算与效果预算的合并池<span class="ovs">海外</span></td><td class="cmt">ATT 后时代"品牌预算效果化"的代表打法——CPI/CPA 口径的 AI 优化直接对接买量团队 KPI；国内出海投放可对标其"上漏斗画像→下漏斗转化"链路</td></tr>
+      <tr><td class="no"><b>6</b><span class="trend">NEW</span></td><td class="co">蓝色光标 / AhaCreator</td><td class="prod"><span class="pn"><a class="off" href="https://ahacreator.com">AhaCreator<sup>↗</sup></a> × 蓝色光标合作</span><span class="tags"><span>投放</span></span></td><td class="desc">9/10 披露深度合作：把跨国达人合作（达人发现匹配→建联→议价→订单→内容交付→跨境结算）从人工搜索/邮件/表格改为 <b>AI 原生工作流</b>，主打规模化复制海外达人营销（量子位投稿性质）<span class="sl"><a href="https://www.qbitai.com/2026/09/486651.html">量子位</a></span></td><td class="sig">AhaCreator 自述连接全球<b>500万创作者</b>、以独家真实投放交易数据做匹配；蓝色光标自述全球 TOP10 营销传播集团（2023 年 AI²战略、Blue AI 覆盖达人营销场景）——达人渠道（海外 KOL 投放）开始 AI 管线化<span class="ovs">海外</span><span class="ovs">出海</span></td><td class="cmt">出海买量的"达人渠道"开始 AI 管线化——匹配/议价/结算的人力和管理带宽成本坍塌；蓝色光标级别集团下场，游戏出海厂商的达人营销预算可开始评估此类平台（数字为合作方自述，采信需谨慎）</td></tr>
+      <tr><td class="no"><b>7</b><span class="trend">↓3</span></td><td class="co">正文未披露</td><td class="prod"><span class="pn">SkyProduction 天工工作台</span><span class="tags"><span>素材生成（短剧管线）</span></span></td><td class="desc">限免第二弹（9/9-9/14）：MiniMax H3 会员<b>限时免费无限用</b>，主打"最实惠的 H3 使用权限"；首期（8/28-9/1）联合通义万相 Wan 3.0 限免"反响热烈"（量子位投稿性质）<span class="sl"><a href="https://www.qbitai.com/2026/09/486052.html">量子位</a></span></td><td class="sig">以模型限免抢短剧/漫剧/广告创作者，工具平台开始替模型厂打价格战</td><td class="cmt">平台替模型厂掏钱做限免=短剧工具赛道进入抢客期；对照上期"AI 新剧占日供给 74%"，管线工具的"工作室税"正在被价格战稀释，采购窗口利好</td></tr>
+    </table>
+    <div class="tnote"><b>表单备注</b>：收录范围=游戏与内容行业向优先，通用 ChatBot/大模型类每期限 1 条（本期无通用席位）；六类标签中【视频】【代码】【数据分析】本周无过硬产品周信号，不凑数（代码类仅社区争议讨论，见编者注）。海外对标（<a href="https://www.toolify.ai/zh/category/ai-3d-model-generator">Toolify 3D 生成器分类页</a>，9/11 实测）：头部仍为 <b>Meshy／Tripo／Rodin（Hyper3D）／Luma</b>——与上期一致，Meshy 居首且有本周强信号加持。海外/出海信号本期 4 条：Meshy（海外榜）、ChatGPT Images 2.5（海外）、LoopMe（海外）、AhaCreator（海外/出海）。</div>
+  </div></div>
+
+  <!-- 底部备注 -->
+  <div class="meta">
+    <div class="row"><span class="k">榜单口径</span><span class="v">增量信号榜——新上榜 · 增速异动 · 报道密度的复合强度排序，非权威 MAU 榜；优先级：<b>新发布 &gt; 硬数据 &gt; 权威月榜变化 &gt; 报道密度</b>；统计窗口 <b>2026-09-04 17:00 → 2026-09-11 09:25</b>（北京时间，窗口内报道即计为周信号，正文已标事件原始日期）；<b>海外信号侧重</b>（海外新发布与海外市场表现加权，页面以蓝色「海外榜/海外/出海」标签标注，本期 4 条）</span></div>
+    <div class="row"><span class="k">权威锚点</span><span class="v">本期无新月度锚点数据——AICPB 站点数据仍由前端接口加载、静态抓取不可得（9/11 复核）；8月出海增速榜未见发布；海外导航锚点 Toolify 3D 生成器分类页本期实测可达（头部结构见工具表备注）</span></div>
+    <div class="row"><span class="k">变化标记</span><span class="v">新 本周新面孔（序号处绿底标注） / NEW 新入榜 / ↑n 上升 / ↓n 下降 / — 持平 / BASE 首期基线——本期对照 W36 周榜（2026-09-04）计算</span></div>
+  </div>
+
+  <div class="foot">AI周榜（20260904-20260911） · 2026-W37 · 数据基于公开报道，仅供内部参考</div>
+</div>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.onclick = function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+      document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+      document.getElementById(t.dataset.p).classList.add('on');
+    };
+  });
+</script>
+</body>
+</html>

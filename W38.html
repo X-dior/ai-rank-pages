@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI周榜（20260911-20260918）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif; background:#f2f3f5; color:#1f2329; padding:20px 14px 40px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  .hd { display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-bottom:3px solid #165DFF; padding:6px 4px 12px; margin-bottom:12px; }
+  .hd h1 { font-size:25px; }
+  .hd .gen { margin-left:auto; font-size:12.5px; color:#86909c; }
+  /* 周观察总结 */
+  .obs { background:#fff; border:1px solid #e5e6eb; border-radius:10px; padding:12px 18px; margin-bottom:14px; }
+  .obs .t { font-size:14px; color:#165DFF; font-weight:800; letter-spacing:1px; margin-bottom:8px; }
+  .obs .item { font-size:14.5px; line-height:1.75; margin-bottom:8px; padding-left:12px; border-left:3px solid #165DFF; }
+  .obs .item:last-child { margin-bottom:0; }
+  .obs .item b { color:#1d2c53; }
+  .obs .act { display:block; margin-top:6px; background:#fffbe8; border-left:3px solid #d25f00; border-radius:0 4px 4px 0; padding:4px 10px; color:#874d00; }
+  .obs a { color:#165DFF; text-decoration:none; }
+  /* tabs */
+  .tabs { display:flex; gap:6px; position:sticky; top:0; z-index:9; background:#f2f3f5; padding:8px 0; }
+  .tab { border:1px solid #d4d7dd; background:#fff; color:#4e5969; border-radius:8px 8px 0 0; padding:8px 26px; font-size:15.5px; font-weight:700; cursor:pointer; }
+  .tab.on { background:#165DFF; border-color:#165DFF; color:#fff; }
+  .panel { display:none; }
+  .panel.on { display:block; }
+  .card { background:#fff; border:1px solid #e5e6eb; border-radius:0 10px 10px 10px; padding:12px; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:960px; }
+  th { background:#eef3ff; color:#1d2c53; font-size:13.5px; padding:8px 9px; text-align:left; white-space:nowrap; border-bottom:2px solid #c9d8ff; }
+  td { font-size:13.5px; padding:7px 9px; border-bottom:1px solid #f0f1f3; vertical-align:top; line-height:1.5; }
+  tr:hover td { background:#f7f9ff; }
+  tr.new td { background:#f6ffed; }
+  tr.new:hover td { background:#effbe6; }
+  .no { width:42px; text-align:center; }
+  .no b { display:block; font-size:15px; color:#165DFF; }
+  .no .trend { display:inline-block; margin-top:2px; font-size:10.5px; color:#86909c; background:#f2f3f5; border-radius:4px; padding:0 4px; }
+  tr.new .no b { color:#00b42a; }
+  tr.new .trend { color:#00b42a; background:#e8ffea; }
+  .co { width:92px; font-weight:700; }
+  .prod { width:168px; }
+  .prod .pn { font-weight:700; display:block; }
+  .prod a.off { color:inherit; text-decoration:none; border-bottom:1px dashed #165DFF; }
+  .prod a.off:hover { color:#165DFF; }
+  .prod a.off sup { font-size:10px; color:#165DFF; margin-left:1px; }
+  .prod .tags { margin-top:3px; white-space:nowrap; }
+  .prod .tags span { display:inline-block; background:#f2f3f5; color:#4e5969; border-radius:4px; padding:0 7px; font-size:11.5px; margin-right:4px; }
+  .prod .tags .nv { color:#00b42a; background:#e8ffea; }
+  .desc { }
+  .desc b { color:#1f2329; }
+  .desc .sl { margin-left:8px; white-space:nowrap; }
+  .desc .sl a { font-size:12px; color:#165DFF; text-decoration:none; border-bottom:1px dashed #9dc2ff; margin-right:7px; }
+  .sig { }
+  .sig b { color:#d25f00; }
+  .sig .ovs { display:inline-block; margin-left:4px; font-size:11px; color:#165DFF; background:#eef3ff; border-radius:4px; padding:0 5px; vertical-align:1px; }
+  .cmt { width:200px; color:#4e5969; font-size:13px; }
+  .tnote { background:#fffbe8; border:1px solid #ffe58f; border-radius:8px; margin-top:10px; padding:9px 14px; font-size:13.5px; color:#614700; line-height:1.7; }
+  .tnote a { color:#165DFF; text-decoration:none; border-bottom:1px dashed #d8c07a; }
+  /* 底部备注 */
+  .meta { background:#fff; border:1px solid #e5e6eb; border-radius:10px; padding:14px 18px; margin-top:14px; }
+  .meta .row { display:flex; gap:10px; font-size:14px; line-height:1.75; }
+  .meta .k { flex:0 0 78px; color:#4e5969; font-weight:700; }
+  .meta .v { flex:1; }
+  .foot { text-align:center; color:#86909c; font-size:12.5px; margin-top:14px; }
+  @media print { .tabs{display:none} .panel{display:block!important; page-break-inside:avoid} .card{border-radius:0} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hd">
+    <h1>AI周榜（20260911-20260918）</h1>
+    <span class="gen">2026-W38 · 生成 2026-09-18 15:55 · 补跑版（09:15 自动生成失败后人工补跑） · 仅供内部参考</span>
+  </div>
+
+  <!-- 周观察总结 -->
+  <div class="obs">
+    <div class="t">📌 周观察总结</div>
+    <div class="item"><b>① AI 游戏从「平台收编战」进入「数据兑现期」——产能真实兑现，生意仍未跑通</b>：茶馆深稿给出 UGC 平台首份成规模数据——心动 <b>TapTap制造上半年产出近5000款、累计玩家超1000万、创作者超3000人</b>（<a href="https://youxichaguan.com/archives/208175">茶馆</a>）；AI 原生游戏首次成批冲进 TapTap 热门前十（3款，模拟器方向，<a href="https://www.youxituoluo.com/534878.html">陀螺</a>）；腾讯云黑客松游戏赛道 6917 人参赛、606 件作品、复赛考「工作台」而非游戏（<a href="http://www.gamelook.com.cn/2026/09/602557/">GameLook</a>）；B站以「AI 无限竞技场」把模型测评做成社区基建（月均 1.9 亿人看 AI 内容，<a href="https://www.qbitai.com/2026/09/490396.html">量子位</a>）。但深稿结论同样醒目：<b>"依旧算不上好生意"</b>——变现集中在少数头部创作者（月入超10万者寡），劣质供给涌入正在消耗平台信用。
+      <span class="act">可行动：跟踪 TapTap制造 商业化分成口径与网易星匣全量开放节奏；小团队可试水"文字模拟器+AI制作"的 TapTap 低成本供给位；关注 B站 AI 测评 UP 主作为模型/工具类产品的种草位。</span></div>
+    <div class="item"><b>② AI 工具商业化进入「链路打包」阶段——从卖功能到卖整条链路/基建，合规标注成为新成本项</b>：天工×火山引擎×DramaWave 三重福利把「模型积分＋发行流量＋承制订单」整链打包（<a href="https://www.qbitai.com/2026/09/491147.html">量子位</a>，投稿）；OPPO 把端侧算力当基建开放给 7.7 亿用户底座上的出海开发者（<a href="https://www.yfchuhai.com/article/10229055.html">扬帆</a>）；Claude 开放内部 3 万 Agent 管理技术、自证 26% 核心研发由 AI 主导（<a href="https://www.qbitai.com/2026/09/491711.html">量子位</a>）。监管侧同步落锤：广电总局披露 <b>前8月微短剧43万部、AI剧占比超9成</b>，要求 AI 剧标注内容（<a href="https://www.yfchuhai.com/article/10229065.html">第一财经</a>）；文字侧起点/番茄率先反制"AI 数字泔水"（<a href="http://www.gamelook.com.cn/2026/09/602336/">GameLook</a>）。
+      <span class="act">可行动：短剧工具采购对照天工三重福利测算整链成本；出海 App 评估 OPPO 端侧 AI SDK 接入门槛与分成口径；AI 短剧/素材出海提前对齐 9/17 后的内容标注合规要求；素材管线保留"人工精修"环节以对冲平台质量分级。</span></div>
+  </div>
+
+  <!-- 榜单分栏 -->
+  <div class="tabs">
+    <div class="tab on" data-p="g">AI+游戏</div>
+    <div class="tab" data-p="t">AI+工具</div>
+  </div>
+
+  <!-- AI+游戏 -->
+  <div class="panel on" id="g"><div class="card">
+    <table>
+      <tr><th class="no">序号</th><th class="co">公司</th><th class="prod">产品</th><th class="desc">说明</th><th class="sig">信号</th><th class="cmt">速评</th></tr>
+      <tr class="new"><td class="no"><b>1</b><span class="trend">新</span></td><td class="co">心动 / 网易 / 月之暗面 / 233等</td><td class="prod"><span class="pn">AI UGC 游戏平台生态<br>（TapTap制造·星匣·K399·233工坊）</span><span class="tags"><span>AI游戏UGC平台群</span></span></td><td class="desc">茶馆深稿：平台收编 Vibe coding 创作者的生态全景——腾讯游点灵、网易造化工坊＋星匣、月之暗面 K399、233乐园 233工坊同场竞逐，幕间/Soon 等拿到融资，小红书/抖音/快手/支付宝陆续开辟流量入口<span class="sl"><a href="https://youxichaguan.com/archives/208175">茶馆</a></span></td><td class="sig">TapTap制造上半年产出游戏<b>近5000款</b>、累计玩家<b>超1000万</b>、日均16万、创作者<b>超3000人</b>；幕间、Soon 获<b>千万美元～数亿人民币</b>融资；<b>少数创作者月入超10万</b>——深稿结论：平台高估独立开发者综合能力、劣质内容涌入，"依旧算不上好生意"</td><td class="cmt">平台收编战打到"数据兑现期"：半年5000款确认供给侧产能真实，但变现集中在少数头部；平台真正抢的是下一代游戏开发者入口，Game Jam 密度（幕间/星匣/造化工坊轮番办赛）就是抢人成本</td></tr>
+      <tr class="new"><td class="no"><b>2</b><span class="trend">新</span></td><td class="co">个人开发者</td><td class="prod"><span class="pn">《军旅》《古玩人生》《崇祯直聘》</span><span class="tags"><span>AI原生游戏</span><span class="nv">模拟器</span></span></td><td class="desc">TapTap 热门榜前十闯入 3 款个人制作的"AI制作"游戏，集中落在模拟经营＋文字模拟器方向；产品仍粗糙（BUG不少）但玩家乐于共建<span class="sl"><a href="https://www.youxituoluo.com/534878.html">陀螺</a></span></td><td class="sig">《军旅》列热门榜<b>第4</b>（关注度18万/热度19万，一人开发）、《古玩人生》第7（关注9.7万/热度10万）；"玩家录屏→抖音发酵→回流TapTap试玩"的流量链路<b>首次跑通</b></td><td class="cmt">再次验证"最低可玩成本"逻辑——AI 个体开发者的供给洪峰会先冲击文字模拟器/轻模拟经营这类无美术门槛品类；小游戏厂商的同类题材位将被低价供给填平</td></tr>
+      <tr class="new"><td class="no"><b>3</b><span class="trend">新</span></td><td class="co">B站</td><td class="prod"><span class="pn"><a class="off" href="https://www.bilibili.com/blackboard/era/aiarena.html">B站「AI无限竞技场」<sup>↗</sup></a></span><span class="tags"><span>平台AI生态</span><span>模型测评</span></span></td><td class="desc">9/16 上线：UP主以真实工作流自主命题、同题 PK 的模型测评竞技广场，排名实时更新、持续开放报名（B站官方供稿）<span class="sl"><a href="https://www.qbitai.com/2026/09/490396.html">量子位</a></span></td><td class="sig">首期覆盖<b>上百个大模型</b>，GPT-6 Astra 居首、前五中国产占三席；B站 AI 知识内容消费时长同比<b>+72%</b>、月均观看 AI 内容用户<b>超1.9亿</b>——上期"平台容器战"B站线从 Toy 升维到测评广场</td><td class="cmt">不做小游戏容器改做"模型测评广场"：1.9亿月均 AI 内容观众的社区沉淀变成评测流量分发的入场券；对买量侧，"模型评测类 UP 主"正在成为新的效果种草位</td></tr>
+      <tr class="new"><td class="no"><b>4</b><span class="trend">新</span></td><td class="co">腾讯</td><td class="prod"><span class="pn">腾讯云黑客松·游戏极限开发挑战赛</span><span class="tags"><span>AI游戏创作赛事</span></span></td><td class="desc">历时150天、9/13 深圳总决赛收官；港科大 Anchor 团队《锚点》（阿尔茨海默病题材双视角3D解谜）摘游戏赛道一等奖<span class="sl"><a href="http://www.gamelook.com.cn/2026/09/602557/">GameLook</a></span></td><td class="sig">游戏赛道<b>6917名</b>参赛者、覆盖海内外<b>215所</b>高校、提交<b>606件</b>作品；<b>非科班参赛者占比超50%</b>；复赛要求把能力沉淀为可复用「工作台」而非单款游戏</td><td class="cmt">6917人量级说明 AI 游戏创作的"人口基数"已被高校端接受；考"工作台"不考游戏=腾讯在按"生产能力复用"筛选可投资的管线型团队</td></tr>
+      <tr><td class="no"><b>5</b><span class="trend">↓2</span></td><td class="co">腾讯</td><td class="prod"><span class="pn"><a class="off" href="https://workbuddy.qq.com">WorkBuddy<sup>↗</sup></a>（黑客松赛场采用）</span><span class="tags"><span>AI助手×游戏研发</span></span></td><td class="desc">上期《和平精英》联动的延续信号：腾讯云黑客松游戏赛道官方报道点名"在 WorkBuddy 等AI工具助力下，创意表达的门槛被大大降低"<span class="sl"><a href="http://www.gamelook.com.cn/2026/09/602557/">GameLook</a></span></td><td class="sig">从游戏 IP 联名走进<b>研发赛事</b>场景——两连信号（W37和平精英×W38黑客松）确认其在腾讯体系内的全场景 AI 助手定位</td><td class="cmt">观察其是否复制"IP联名＋赛事赞助"双轮打法；对同类办公 AI 是可抄的获客模板（游戏IP借流量、赛事场景做案例）</td></tr>
+      <tr class="new"><td class="no"><b>6</b><span class="trend">新</span></td><td class="co">司命工作室</td><td class="prod"><span class="pn">《京门之下》（AI互动影游）</span><span class="tags"><span>AI互动影游</span></span></td><td class="desc">以 AI 悬疑互动作品《列车怪谈：虚像之境》完成首次公开上线后，拿下长篇古风探案小说《京门之下》改编授权启动 AI 互动影游；团队专设 AI 影像导演、AI 美术岗位<span class="sl"><a href="https://youxichaguan.com/archives/208254">茶馆</a></span></td><td class="sig">AI 从幕后提效工具走到<b>成品前台</b>（场景/角色/声音/视频生产）；背景：Steam 已要求开发者披露玩家实际消费的 AI 内容——全 AI 制作的合规框架先行于商业化落地</td><td class="cmt">AI 影游从"降本的真人替代"走向"原生叙事管线"——专设 AI 影像导演岗=新分工出现；互动影游题材多元化（悬疑/反诈/历史）与 AI 管线成熟同步发生</td></tr>
+    </table>
+    <div class="tnote"><b>表单备注</b>：收录范围=AI 玩法为核心的游戏产品与 AI 互动内容生态动向，国内海外都收；绿底「新」=本周新面孔；变化标记相对上期周榜（W37，2026-09-11）。上期#4「平台容器战」（抖音互动空间×小红书小工具×B站 Toy×快手）本期以 B站 单列呈现（AI 无限竞技场有独立新信号），其余三家窗口内无新数据不再单列。</div>
+  </div></div>
+
+  <!-- AI+工具 -->
+  <div class="panel" id="t"><div class="card">
+    <table>
+      <tr><th class="no">序号</th><th class="co">公司</th><th class="prod">产品</th><th class="desc">说明</th><th class="sig">信号</th><th class="cmt">速评</th></tr>
+      <tr><td class="no"><b>1</b><span class="trend">NEW</span></td><td class="co">Anthropic</td><td class="prod"><span class="pn"><a class="off" href="https://claude.com/product/claude-code">Claude Code<sup>↗</sup></a>（Projects 重构版）</span><span class="tags"><span>代码</span><span>多Agent</span></span></td><td class="desc">项目功能全面重构：Coordinator 协调器自动拆解工程任务，调度云端多 Agent 各拉独立 Git 分支并行开发、写完自动提 PR，新增共享记忆保证 Agent 间上下文对齐<span class="sl"><a href="https://www.qbitai.com/2026/09/491711.html">量子位</a></span></td><td class="sig">官方同日披露上限：内部研发平台日均并行<b>3万个 AI Agent</b>，核心 AI 研发已有<b>26% 由 Claude 主导</b>（L4级）——半年前该数字<b>不足1%</b>；内部管理技术免费开放<span class="ovs">海外</span></td><td class="cmt">多 Agent 并行把"一人一仓"改成"一人一军"——26% 渗透率是厂商自证 AI 研发口径里最硬的一个；游戏侧外包/SDK/工具链这类模块边界清晰的任务将最先被重定价</td></tr>
+      <tr class="new"><td class="no"><b>2</b><span class="trend">新</span></td><td class="co">出海AI短剧App</td><td class="prod"><span class="pn">BlinkDrama（西语市场）</span><span class="tags"><span>视频</span><span>AI短剧</span><span class="nv">出海</span></span></td><td class="desc">AI 短剧出海拉美样本：登顶 App Store 西班牙、拉美16国霸榜；Sensor Tower：2026Q1 拉美占全球短剧 App 下载量 23%（仅次于东南亚32%）<span class="sl"><a href="https://www.yfchuhai.com/article/10229059.html">扬帆</a> <a href="https://www.yfchuhai.com/article/10229065.html">第一财经</a></span></td><td class="sig">监管口径（9/17 国新办·广电总局）：今年前8月上线微短剧<b>43万部＝去年全年13倍</b>、其中<b>AI剧占比超9成</b>；2025 年市场规模破<b>千亿</b>、用户超<b>8亿</b>；要求 AI 剧标注内容、已全网下架违规微短剧<b>6.8万部</b></td><td class="cmt">AI 剧占新增供给9成＝AI 短剧已是"供给主体"而非降本选项；西语市场是继东南亚后第二个流量洼地；"AI标注＋下架6.8万部"=出海合规新增成本项，含 AI 生成内容的买量素材披露口径要提前对齐</td></tr>
+      <tr><td class="no"><b>3</b><span class="trend">↑4</span></td><td class="co">正文未披露</td><td class="prod"><span class="pn">SkyProduction 天工工作台<br>×火山引擎×DramaWave</span><span class="tags"><span>素材生成</span><span>短剧管线</span></span></td><td class="desc">中秋国庆三重福利（9/15-10/15）：Seedance 2.5 定向积分首购加赠70%；每20万积分兑换一部短剧的 DramaWave 4倍流量加持；单笔充值50万获一部 DramaWave AI 短剧承制权益（量子位投稿性质，见编者注）<span class="sl"><a href="https://www.qbitai.com/2026/09/491147.html">量子位</a></span></td><td class="sig">DramaWave 为昆仑万维旗下、全球短剧 App 下载 Top3——从上期"模型限免"升级为<b>"创作-发行-承制"整链打包</b>，工具平台开始绑定分发渠道卖链路<span class="ovs">出海</span></td><td class="cmt">三重福利把"模型积分"变成"发行通道＋承制订单"入场券——价格战形态从"免费用"升级为"用了还能变现"；对照上期限免第二弹，短剧工具的采购窗口继续利好</td></tr>
+      <tr class="new"><td class="no"><b>4</b><span class="trend">新</span></td><td class="co">OPPO</td><td class="prod"><span class="pn"><a class="off" href="https://open.oppomobile.com">OPPO 端侧 AI 开放平台<sup>↗</sup></a></span><span class="tags"><span>端侧AI</span><span class="nv">出海基建</span></span></td><td class="desc">把手机从"AI 功能展示窗口"变为"AI 能力运行底座"：出海 App 的 AI 能力可不上云（云端往返2-3秒的场景压到端侧即时响应），算力成本按端侧重新定价<span class="sl"><a href="https://www.yfchuhai.com/article/10229055.html">扬帆</a></span></td><td class="sig"><b>7.7亿用户、90+国家</b>铺开——端侧 AI 从旗舰机卖点变成开放给开发者的基建<span class="ovs">出海</span></td><td class="cmt">端侧算力开放=出海 App 的 AI 功能成本模型重算（免云端 token 费＋响应提速）；对休闲/工具类出海 App 是比云模型更低的接入门槛，先盯 SDK 接入与分成口径</td></tr>
+      <tr><td class="no"><b>5</b><span class="trend">NEW</span></td><td class="co">Manus</td><td class="prod"><span class="pn"><a class="off" href="https://manus.im">Manus<sup>↗</sup></a>（新融资）</span><span class="tags"><span>通用Agent</span><span>本期席位</span></span></td><td class="desc">恢复独立运营第17天：推进约5亿美元新融资、目标估值约40亿美元（彭博援引知情人士，谈判仍在进行）；9/1 官宣独立运营后的首轮融资<span class="sl"><a href="https://www.qbitai.com/2026/09/491764.html">量子位</a></span></td><td class="sig">较8月老股东约<b>20亿美元</b>回购价<b>翻倍</b>；一年半身价从5亿（2025.4 Benchmark轮）→20亿（Meta收购/回购）→瞄准<b>40亿美元</b><span class="ovs">海外</span></td><td class="cmt">拆分-回购-翻倍的过山车说明通用 Agent 的资本定价已脱离业务数据（ARR 1亿美元是 Meta 收购前口径）——按传闻级采信；席位给它是因"40亿美元融资接近完成"的硬事实</td></tr>
+      <tr class="new"><td class="no"><b>6</b><span class="trend">新</span></td><td class="co">阅文 / 番茄</td><td class="prod"><span class="pn">网文 AI 治理：起点「清道夫」/番茄限更</span><span class="tags"><span>素材生成</span><span>治理</span></span></td><td class="desc">唐家三少 9/9 于《光明日报》发文提出「AI数字泔水」（AI 洗稿=智能化结构重组的工业化抄袭），多家官媒转载推向公共舆论；起点「清道夫」整治涉事作品（不下架但剔除榜单、取消推流）、番茄限制账号日更字数，已有误伤争议<span class="sl"><a href="http://www.gamelook.com.cn/2026/09/602336/">GameLook</a></span></td><td class="sig">AI 文字供给泛滥后内容平台<b>首次成体系反制</b>——16家平台自律公约（2025）收效有限后的强执行阶段</td><td class="cmt">文字侧的今天就是图像/视频侧的明天——游戏行业对照点：买量平台的"AI 素材质量分级"可能跟进，素材管线里"人工精修环节"的价值回升</td></tr>
+    </table>
+    <div class="tnote"><b>表单备注</b>：收录范围=游戏与内容行业向优先，通用 ChatBot/大模型类每期限 1 条（本期席位=<b>Manus</b>）；六类标签中【3D】【投放】【数据分析】本周无过硬新信号，按"无过硬周信号不凑数"原则空缺——W37 大事件（Meshy 童欣加盟/B轮、Tripo P2.0、LoopMe 升级）后 3D 双雄进入静默期，掉榜清单见编者注。海外导航锚点（<a href="https://www.toolify.ai/zh/category/ai-3d-model-generator">Toolify 3D 生成器分类页</a>，9/18 实测）：头部=<b>Meshy／Luma AI／Tripo AI／IconScout／Hyper3D</b>（共143个）——与上期一致，Meshy 居首。海外/出海信号本期 5 条：Claude Code（海外）、Manus（海外）、BlinkDrama（出海）、OPPO（出海）、天工×DramaWave（出海链路）。</div>
+  </div></div>
+
+  <!-- 底部备注 -->
+  <div class="meta">
+    <div class="row"><span class="k">榜单口径</span><span class="v">增量信号榜——新上榜 · 增速异动 · 报道密度的复合强度排序，非权威 MAU 榜；优先级：<b>新发布 &gt; 硬数据 &gt; 权威月榜变化 &gt; 报道密度</b>；统计窗口 <b>2026-09-11 17:00 → 2026-09-18 15:55</b>（北京时间，补跑版=标准周窗口，窗口内报道即计为周信号，正文已标事件原始日期）；<b>海外信号侧重</b>（海外新发布与海外市场表现加权，页面以蓝色「海外/出海」标签标注，本期 5 条）</span></div>
+    <div class="row"><span class="k">权威锚点</span><span class="v">AICPB 月度榜本期核查有进展——其数据接口（api/ranks）可直接获取，但各分类最新版本仍为 <b>2026-06 版</b>、无新月度数据（连续第四期无月榜校准）；海外导航锚点 Toolify 3D 生成器分类页实测可达（头部结构见工具表备注）</span></div>
+    <div class="row"><span class="k">变化标记</span><span class="v">新 本周新面孔（序号处绿底标注） / NEW 新入榜 / ↑n 上升 / ↓n 下降 / — 持平 / BASE 首期基线——本期对照 W37 周榜（2026-09-11）计算</span></div>
+  </div>
+
+  <div class="foot">AI周榜（20260911-20260918） · 2026-W38 · 补跑版 · 数据基于公开报道，仅供内部参考</div>
+</div>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.onclick = function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+      document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+      document.getElementById(t.dataset.p).classList.add('on');
+    };
+  });
+</script>
+</body>
+</html>

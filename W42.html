@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI周榜（20261009-20261016）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif; background:#f2f3f5; color:#1f2329; padding:20px 14px 40px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  .hd { display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-bottom:3px solid #165DFF; padding:6px 4px 12px; margin-bottom:12px; }
+  .hd h1 { font-size:25px; }
+  .hd .gen { margin-left:auto; font-size:12.5px; color:#86909c; }
+  /* 周观察总结 */
+  .obs { background:#fff; border:1px solid #e5e6eb; border-radius:10px; padding:12px 18px; margin-bottom:14px; }
+  .obs .t { font-size:14px; color:#165DFF; font-weight:800; letter-spacing:1px; margin-bottom:8px; }
+  .obs .item { font-size:14.5px; line-height:1.75; margin-bottom:8px; padding-left:12px; border-left:3px solid #165DFF; }
+  .obs .item:last-child { margin-bottom:0; }
+  .obs .item b { color:#1d2c53; }
+  .obs .act { display:block; margin-top:6px; background:#fffbe8; border-left:3px solid #d25f00; border-radius:0 4px 4px 0; padding:4px 10px; color:#874d00; }
+  .obs a { color:#165DFF; text-decoration:none; }
+  /* tabs */
+  .tabs { display:flex; gap:6px; position:sticky; top:0; z-index:9; background:#f2f3f5; padding:8px 0; }
+  .tab { border:1px solid #d4d7dd; background:#fff; color:#4e5969; border-radius:8px 8px 0 0; padding:8px 26px; font-size:15.5px; font-weight:700; cursor:pointer; }
+  .tab.on { background:#165DFF; border-color:#165DFF; color:#fff; }
+  .panel { display:none; }
+  .panel.on { display:block; }
+  .card { background:#fff; border:1px solid #e5e6eb; border-radius:0 10px 10px 10px; padding:12px; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:960px; }
+  th { background:#eef3ff; color:#1d2c53; font-size:13.5px; padding:8px 9px; text-align:left; white-space:nowrap; border-bottom:2px solid #c9d8ff; }
+  td { font-size:13.5px; padding:7px 9px; border-bottom:1px solid #f0f1f3; vertical-align:top; line-height:1.5; }
+  tr:hover td { background:#f7f9ff; }
+  tr.new td { background:#f6ffed; }
+  tr.new:hover td { background:#effbe6; }
+  .no { width:42px; text-align:center; }
+  .no b { display:block; font-size:15px; color:#165DFF; }
+  .no .trend { display:inline-block; margin-top:2px; font-size:10.5px; color:#86909c; background:#f2f3f5; border-radius:4px; padding:0 4px; }
+  tr.new .no b { color:#00b42a; }
+  tr.new .trend { color:#00b42a; background:#e8ffea; }
+  .co { width:92px; font-weight:700; }
+  .prod { width:168px; }
+  .prod .pn { font-weight:700; display:block; }
+  .prod a.off { color:inherit; text-decoration:none; border-bottom:1px dashed #165DFF; }
+  .prod a.off:hover { color:#165DFF; }
+  .prod a.off sup { font-size:10px; color:#165DFF; margin-left:1px; }
+  .prod .tags { margin-top:3px; white-space:nowrap; }
+  .prod .tags span { display:inline-block; background:#f2f3f5; color:#4e5969; border-radius:4px; padding:0 7px; font-size:11.5px; margin-right:4px; }
+  .prod .tags .nv { color:#00b42a; background:#e8ffea; }
+  .desc { }
+  .desc b { color:#1f2329; }
+  .desc .sl { margin-left:8px; white-space:nowrap; }
+  .desc .sl a { font-size:12px; color:#165DFF; text-decoration:none; border-bottom:1px dashed #9dc2ff; margin-right:7px; }
+  .sig { }
+  .sig b { color:#d25f00; }
+  .sig .ovs { display:inline-block; margin-left:4px; font-size:11px; color:#165DFF; background:#eef3ff; border-radius:4px; padding:0 5px; vertical-align:1px; }
+  .cmt { width:200px; color:#4e5969; font-size:13px; }
+  .tnote { background:#fffbe8; border:1px solid #ffe58f; border-radius:8px; margin-top:10px; padding:9px 14px; font-size:13.5px; color:#614700; line-height:1.7; }
+  .tnote a { color:#165DFF; text-decoration:none; border-bottom:1px dashed #d8c07a; }
+  /* 底部备注 */
+  .meta { background:#fff; border:1px solid #e5e6eb; border-radius:10px; padding:14px 18px; margin-top:14px; }
+  .meta .row { display:flex; gap:10px; font-size:14px; line-height:1.75; }
+  .meta .k { flex:0 0 78px; color:#4e5969; font-weight:700; }
+  .meta .v { flex:1; }
+  .foot { text-align:center; color:#86909c; font-size:12.5px; margin-top:14px; }
+  @media print { .tabs{display:none} .panel{display:block!important; page-break-inside:avoid} .card{border-radius:0} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hd">
+    <h1>AI周榜（20261009-20261016）</h1>
+    <span class="gen">2026-W42 · 生成 2026-10-16 · 仅供内部参考</span>
+  </div>
+
+  <!-- 周观察总结 -->
+  <div class="obs">
+    <div class="t">📌 周观察总结</div>
+    <div class="item"><b>①「AI 造游戏」从发布会故事变成成本表故事——平台、模型、产能三条线同周给出硬数字</b>：平台侧，海外 AI 游戏创作平台 Astrocade 官宣 <b>1000 万 MAU（四个月翻倍）</b>、191 国月游玩 2.2 亿次、创作者分成已跑通（0.1 美元/千次有效游玩，头部月入上千美元）（<a href="http://www.gamelook.com.cn/2026/10/603589/">GameLook</a>），腾讯系虎牙同类工具 BinkBink 随即上架 GooglePlay——「生成即分发」首次跑出规模数据；但谷歌 Playground 上线五天即被实测暴露<b>画风漂移、无版本回退、提示词连锁偏移</b>三大短板（<a href="https://www.youxituoluo.com/534947.html">陀螺</a>），生成快、可控差，平台胜负手在推荐分发而非生成质量。模型侧，昆仑万维 Matrix-Game 4.0 把游戏世界模型塞进<b>单张 RTX 5090</b>（按键到画面约 112ms、开源，<a href="https://www.qbitai.com/2026/10/503353.html">量子位</a>），对照英伟达同路线 StreamRender-H3 要 8 张 GB200——「AI 实时可玩世界」的部署门槛一周内掉两个数量级。产能侧，AI 互动影游《幸存者笔记》交出小团队账本：<b>6 人×4 个月×700 分钟素材≈140 万市场价</b>、Steam 好评率 88% 新品榜第一（<a href="https://www.youxituoluo.com/534950.html">陀螺</a>）。同周 Epic 官宣 3A 管线「AI 优先」（代码不手写、美术全 AI 工作流，<a href="http://www.gamelook.com.cn/2026/10/603886/">GameLook</a>）——从独立团队到 3A 大厂全谱系转向。
+      <span class="act">可行动：AI 互动影游按「2000 元/分钟×编剧导演主导」重估内容成本表，作为短剧/漫剧团队的第二增长曲线立项评估；Matrix-Game 4.0 开源权重直接进内部评测管线，「AI 关卡/AI 剧情」类玩法试点门槛骤降；用 UE 的团队技能栈投资对表 Epic 的 AI 工作流重做。</span></div>
+    <div class="item"><b>②AI 陪伴「一死一生」，单位经济模板换人</b>：Character.AI（<b>2000 万 MAU、1.63 亿注册、曾估值 50 亿美元</b>）10/12 申请 Chapter 11 破产（<a href="http://www.gamelook.com.cn/2026/10/603906/">GameLook</a>）——2024 年月运营成本约 <b>3000 万美元</b> vs 9.99 美元月订阅仅 <b>13.9 万付费</b>，「免费泛聊天」的规模成了负债；28 家潜在买家无人接盘、未成年人诉讼缠身，迪士尼最终只出 <b>2000 万美元底价竞购</b>。同期反面：Whispy AI 靠「网文版 AI 男友」<b>30 天下载 28.4 万做出 233 万美元内购</b>（ARPDAU 3.19 美元、449 美元 Ultra 年订阅、90% 收入来自美国，<a href="https://www.yfchuhai.com/article/10229286.html">扬帆</a>）——把角色聊天做成「可干预的互动言情」（暗黑言情/冰球校草等本土化爽点人设×内心独白等沉浸功能）。与上期「AI 乙游失守」国内线互证：卖「自由对话」被 Token 成本逼死，卖「剧情体验+高客单订阅」才活。
+      <span class="act">可行动：AI 陪伴/乙游类立项按 Whispy 模板重算单位经济（垂类人设×女性向深度付费），泛聊天入口类项目暂缓；盯 Character.AI 资产拍卖（11 月底-12 月初），IP/技术拆卖可能催生低价并购标的。</span></div>
+  </div>
+
+  <!-- 榜单分栏 -->
+  <div class="tabs">
+    <div class="tab on" data-p="g">AI+游戏</div>
+    <div class="tab" data-p="t">AI+工具</div>
+  </div>
+
+  <!-- AI+游戏 -->
+  <div class="panel on" id="g"><div class="card">
+    <table>
+      <tr><th class="no">序号</th><th class="co">公司</th><th class="prod">产品</th><th class="desc">说明</th><th class="sig">信号</th><th class="cmt">速评</th></tr>
+      <tr class="new"><td class="no"><b>1</b><span class="trend">新</span></td><td class="co">昆仑万维（Skywork AI）</td><td class="prod"><span class="pn">Matrix-Game 4.0</span><span class="tags"><span>游戏世界模型</span><span class="nv">开源</span></span></td><td class="desc">官方发布＋量子位编辑实测：<b>全球首款可在单张消费级显卡上实时运行的游戏世界模型</b>——一张 RTX 5090 跑起「AI 实时画出来、按代码规则运行」的游戏；架构＝「给视频模型套上 Harness」：<b>游戏引擎维护世界状态</b>（血量/道具/输赢由代码结算）＋视频模型只管画面（V2V 基于 Wan2.2 5B Fun Control 改造、UE5 成对数据训练）；自然语言让 Coding Agent 改规则（计时赛秒变追击战）<span class="sl"><a href="https://www.qbitai.com/2026/10/503353.html">量子位</a></span></td><td class="sig">按键到画面约 <b>112ms</b>、60 帧、显存峰值约 18.5GiB（现 480p）；对照英伟达同路线 StreamRender-H3 需 <b>8 张 GB200、端到端约 545ms</b>（口径不完全一致仅供参考）；<b>开源</b></td><td class="cmt">「引擎管规则、模型管画面」的分工直接回应了世界模型做游戏的最大疑虑（规则脱缰）——视频模型只当"画师"不当"裁判"；单卡 5090＋开源意味着中小团队今天就能复现评测；3D 素材线（Meshy/Tripo）之外，「玩法侧」的 AI 试点管线值得立一项技术跟踪</td></tr>
+      <tr class="new"><td class="no"><b>2</b><span class="trend">新</span></td><td class="co">Astrocade（美国）</td><td class="prod"><span class="pn">Astrocade</span><span class="tags"><span>AI UGC 游戏平台</span></span></td><td class="desc">官宣 MAU 破千万——「AI 小游戏版 TikTok」：信息流刷游戏、点开即玩，AstroBrain 智能体自然语言约 <b>10 分钟生成</b>一款可玩小游戏；191 国数十万创作者、10 万+款 UGC 游戏、月发布数万款；今年 5 月获红杉/Sea/谷歌 AI 未来基金/英伟达 <b>5600 万美元</b>融资，<b>李飞飞为联合创始人兼 AI 策略顾问</b>；同期虎牙（腾讯持股 65.4%）同类工具 BinkBink 上架 GooglePlay，腾讯/Meta/谷歌加速进场<span class="sl"><a href="http://www.gamelook.com.cn/2026/10/603589/">GameLook</a></span></td><td class="sig"><b>1000 万 MAU（四个月翻倍</b>，5 月为 500 万）、月游玩 <b>2.2 亿次</b>；创作者分成＝累计 10 万次有效游玩后 <b>0.1 美元/千次＋5 倍奖励</b>，头部月入数百至上千美元<span class="ovs">海外</span></td><td class="cmt">千万 MAU＋4 个月翻倍=「生成即分发」平台首次跑出规模数据；信息流刷游戏（不好玩滑走）的形态天然适配买量逻辑——其 UGC 广告位一旦开放就是小游戏出海的新流量池；分成价码（0.1 美元/千次有效游玩）可作自建 UGC 平台激励定价参照；对照 Playground 实测的「可控性差」，海外平台的胜负手在推荐分发而非生成质量</td></tr>
+      <tr class="new"><td class="no"><b>3</b><span class="trend">新</span></td><td class="co">Character.AI</td><td class="prod"><span class="pn">Character.AI（申请破产）</span><span class="tags"><span>AI 陪伴平台</span><span>行业信号</span></span></td><td class="desc">10/12 在特拉华州申请 <b>Chapter 11 破产</b>并启动资产拍卖（11 月底-12 月初完成）；死因＝成本与诉讼双杀：「14 岁少年自杀案」后德州/宾州接连起诉（未成年人保护）；对照：谷歌 2024/8 仅 27 亿美元买技术许可、带走创始人（Noam Shazeer 为 Transformer 论文作者）后平台即走下坡<span class="sl"><a href="http://www.gamelook.com.cn/2026/10/603906/">GameLook</a> <a href="https://www.yfchuhai.com/article/10229286.html">扬帆</a></span></td><td class="sig"><b>2000 万 MAU/累计 1.63 亿用户/曾估值 50 亿美元</b>，FA 接触 <b>28 家潜在买家无人接盘</b>；2024 年月运营成本约 <b>3000 万美元</b> vs 9.99 美元/月订阅仅 <b>13.9 万付费</b>；资产与负债 5000 万-1 亿美元区间；迪士尼 <b>2000 万美元底价竞购</b>（10/13）<span class="ovs">海外</span></td><td class="cmt">一死一生把 AI 陪伴的单位经济摊开——「免费泛聊天」的规模是负债，「垂类人设＋高客单订阅」的用户才是资产；国内 AI 乙游线（上期#2）的 Token 成本困境同构</td></tr>
+      <tr class="new"><td class="no"><b>4</b><span class="trend">新</span></td><td class="co">Whispy AI</td><td class="prod"><span class="pn">Whispy AI: Cozy Chat</span><span class="tags"><span>AI 社交</span><span>AI 男友</span></span></td><td class="desc">Character.AI 的反面样本：2026/6 上线，把角色聊天做成「可干预的互动言情」——用户输入自己的台词/动作、多角色同框、内心独白功能（7/24 上线）、9/1 上线订阅；「网文版 AI 男友」三类欧美言情爽点人设：暗黑言情（黑手党/地下拳手，站内第一 490 万热度）、冰球校草（蹭《Icebreaker》近 500 万册＋Netflix 改剧）、阶层禁忌，全写实系仿真人形象<span class="sl"><a href="https://www.yfchuhai.com/article/10229286.html">扬帆</a></span></td><td class="sig">9/13-10/12 <b>30 天下载 28.4 万、内购约 233 万美元</b>（点点数据），<b>ARPDAU 3.19 美元</b>、累计下载仅约 47 万；近 <b>90% 收入来自美国</b>；敢卖 <b>449 美元 Ultra 年订阅</b><span class="ovs">海外</span></td><td class="cmt">对照口径：2000 万 MAU 月烧 3000 万美元 vs 47 万下载月入 233 万美元——「垂类人设×女性向深度付费」是可迁移的立项模板（与#3一死一生互证）；泛聊天入口类项目暂缓</td></tr>
+      <tr class="new"><td class="no"><b>5</b><span class="trend">新</span></td><td class="co">也玩文化 / 奇树有鱼 / 东西国际（香港）</td><td class="prod"><span class="pn">《幸存者笔记》</span><span class="tags"><span>AI 互动影游</span></span></td><td class="desc">AI 漫剧（抖音上半年 <b>22 万+部</b>）之后下一个风口「AI 互动影游」的头部样本：末日丧尸题材、全流程 AI 生成虚拟真人影像，主创称市面剧情向 AI 互动影游收入第一；制作依赖字节 Seedance（2.0 发布后推翻重做、2.5 单条 30 秒、团队称其「断层式领先」）；同期字节《不问凡尘》打响 3D 类 AI 互动产品登陆 Steam 第一枪<span class="sl"><a href="https://www.youxituoluo.com/534950.html">陀螺</a></span></td><td class="sig"><b>Steam 超 500 条评论、好评率 88%、新品榜第一</b>；<b>12 小时流程/700 分钟素材，市场价约 140 万</b>（2000 元/分钟）；<b>6 人团队（1 导演＋5 名零基础 AI 视频制作师）×4 个月</b>（每天爆肝 12 小时）完成</td><td class="cmt">700 分钟/140 万/6 人 4 个月的账本可直接抄——竞争要素已从「会生成」转向编剧＋导演思维；对短剧/漫剧红海团队是现成的第二曲线，且 Steam 买断制比短剧 IAA 模式更健康</td></tr>
+      <tr class="new"><td class="no"><b>6</b><span class="trend">新</span></td><td class="co">Epic Games</td><td class="prod"><span class="pn">Epic「AI 优先」转向</span><span class="tags"><span>3A 研发管线</span><span>巨头动向</span></span></td><td class="desc">彭博社：与迪士尼合作的星战＋漫威射击大作无限延期，项目转<b>「AI 优先」——代码不再手写、美术素材以「完整 AI 工作流」生成</b>，开发者转为管理/指导 AI 产出；背景＝2026/3 裁员约 1000 人（占全公司 20%）、《堡垒之夜》2025 年用户参与度下滑近 30%（业内人士统计）；玩家社区对品质普遍质疑<span class="sl"><a href="http://www.gamelook.com.cn/2026/10/603886/">GameLook</a></span></td><td class="sig">Tim Sweeney：「大规模转向，开发者重新受训，把 AI 加速用到极致……并把好处带给所有虚幻引擎团队」；迪士尼 2024/2 曾投 15 亿美元<span class="ovs">海外</span></td><td class="cmt">3A「AI 优先」首次落到明面（代码＋美术双替）——大厂用裁员换 AI 转向的样本会加速全行业管线重构；虚幻生态下游的工作流将围绕 AI 重做，技能栈与外包采购要提前对表</td></tr>
+    </table>
+    <div class="tnote"><b>表单备注</b>：收录范围=AI 玩法为核心的游戏产品与 AI 互动内容生态动向，国内海外都收；绿底「新」=本周新面孔；变化标记相对上期周榜（W41，2026-10-09）。本期 6 条（垂媒复更后信号密度恢复，对照 W41 国庆窗口 3 条）。供稿/专稿性质条目：#2 Astrocade（GameLook 专稿，MAU/融资为官方口径＋外媒采访）、#6 Epic（彭博社消息编译）、#5《幸存者笔记》（陀螺对话实录，「收入第一/赛道 No.1」为主创口径）；#1 为量子位编辑实测条目。</div>
+  </div></div>
+
+  <!-- AI+工具 -->
+  <div class="panel" id="t"><div class="card">
+    <table>
+      <tr><th class="no">序号</th><th class="co">公司</th><th class="prod">产品</th><th class="desc">说明</th><th class="sig">信号</th><th class="cmt">速评</th></tr>
+      <tr class="new"><td class="no"><b>1</b><span class="trend">新</span></td><td class="co">谷歌</td><td class="prod"><span class="pn">Nano Banana 2.1</span><span class="tags"><span>素材生成</span></span></td><td class="desc">10/10 凌晨发布：<b>4K 直出</b>摄影级成图、蒙版编辑/主体一致性升级；<b>中文文字渲染清晰度显著改善</b>（海报/文字图可用）；可连同 Veo 3.1 在 Google Flow 内串成「关键帧→动起来」一条龙<span class="sl"><a href="https://www.qbitai.com/2026/10/502484.html">量子位</a></span></td><td class="sig">Arena 战绩——文生图<b>第 4</b>（较上代＋80 分，仅次于 GPT）、多图编辑第 5（1328 分＋67）、单图编辑第 6（1428 分＋38），三项平均<b>＋61.7 分</b>；<b>API 降价：1K/2K 图片生成价格砍半、4K 降约 25%</b><span class="ovs">海外</span></td><td class="cmt">4K 直出＋API 对半降价=素材单图成本再砍一档；中文渲染改善直接利好国内投放的「文字图/海报图」批量生产；建议接入素材管线 A/B（对照上期 Vidu Q4 视频 0.09 元/秒线，图＋视频双降价后 AI 素材成本表整体下移）</td></tr>
+      <tr class="new"><td class="no"><b>2</b><span class="trend">新</span></td><td class="co">LibTV × 抖音创作者生态</td><td class="prod"><span class="pn">LibTV（AI 综艺）</span><span class="tags"><span>视频</span><span>AI 综艺</span></span></td><td class="desc">AI 综艺成为新内容形态：AI 版 MrBeast「@十万个挑战」与 AI 版《变形计》「@重塑计」先后跑通流量；两个头部账号均为 LibTV 认证创作者，LibTV 已与抖音「未来导演扶持计划」合作扶持 AI 综艺——传统几十人团队的综艺制作被「一台电脑＋AI 工具」替代<span class="sl"><a href="https://www.qbitai.com/2026/10/503211.html">量子位</a></span></td><td class="sig">「@十万个挑战」<b>单条 189 万赞、系列均赞 25 万+、吸粉 200 多万、商单报价 15 万元</b>；「@重塑计」<b>3 条视频涨粉 12.7 万</b>、均期点赞 20 万+；抖音相关话题播放量 <b>2876.4 万</b></td><td class="cmt">AI 内容形态从短剧/漫剧卷到综艺——「商单报价 15 万」说明广告主已开始为 AI 内容付费；综艺脑洞场景（现实拍不出的画面）天然适合品牌向/传播向素材，可作买量创意新素材池试探</td></tr>
+      <tr class="new"><td class="no"><b>3</b><span class="trend">新</span></td><td class="co">字节跳动</td><td class="prod"><span class="pn">新 TRAE（Code×Work 融合）</span><span class="tags"><span>代码</span><span>多Agent</span></span></td><td class="desc">代码类连续三周空缺后首条：10/9 双端正式融合——<b>Agent 模式</b>（全局工作台，一个窗口把不同工作分给多个 Agent：写代码/出文档/备交付）＋IDE 模式（SOLO/IDE）；量子位实测「小白从想法做出游戏」：<b>策划 Agent 出策划案、设计 Agent 出高保真设计稿、开发 Agent 写代码三线并行</b>，做出 3D 地牢地图编辑器（含 Agent 间成果冲突的自动取舍——设计 20×20 vs 策划 32×32 网格等按「先做能玩版本」原则逐条裁决）；测试报告/修复报告/交付说明自动存「我的产物」可直接分享<span class="sl"><a href="https://www.qbitai.com/2026/10/502426.html">量子位</a></span></td><td class="sig">策划/设计/开发<b>三 Agent 并行</b>产出可玩游戏原型的首个编辑实测；「写代码/出文档/备交付」多工作流合一窗口</td><td class="cmt">多 Agent 分工（策划/设计/开发）把「一句话做游戏」搬进了专业 IDE——小游戏原型/内部工具的产研提速可实测；注意实测也暴露多 Agent 并行的成果冲突问题，复杂任务仍需人做裁决</td></tr>
+      <tr><td class="no"><b>4</b><span class="trend">↑1</span></td><td class="co">中文在线 ReelShort / 点众等</td><td class="prod"><span class="pn">AI 短剧出海（续线）</span><span class="tags"><span>视频</span><span class="nv">出海</span></span></td><td class="desc">W41「出海半年账」的本周续报：头部平台也难逃「买量吃利润」；产能端有团队 AI 短剧月产能已超 5 部（360 文本层口径）——供过于求＋平台内卷，出海短剧进入利润出清期<span class="sl"><a href="https://www.yfchuhai.com/article/10229284.html">扬帆</a> <a href="https://www.yfchuhai.com/article/10229283.html">扬帆</a></span></td><td class="sig"><b>ReelShort 母公司（中文在线）收入约 57 亿元却由盈转亏</b>，点众短剧净利率长期偏低；<b>海外短剧平台一年增到约 400 家</b>，中文应用下载份额降到 <b>67%</b>（本地化竞品起量）<span class="ovs">出海</span></td><td class="cmt">ReelShort 母公司 57 亿收入转亏=上期「下载＋79%/内购＋13%」剪刀差的利润端验证；400 家平台、中文份额 67% 说明本地化玩家正在分食——出海短剧按「买量占成本 50%＋净利率个位数」的悲观口径重算回本线</td></tr>
+    </table>
+    <div class="tnote"><b>表单备注</b>：收录范围=游戏与内容行业向优先，通用 ChatBot/大模型类每期限 1 条（本期无过硬周信号，席位空缺）；本期 4 条——六类标签中【投放】【数据分析】连续无过硬周信号（W39 起同口径），【代码】类三周空缺后由 TRAE 首填。海外/出海信号本期 6 条：Astrocade、Character.AI、Whispy AI、Epic「AI 优先」、Nano Banana 2.1（海外）、AI 短剧出海（出海），另游戏#1 条目内英伟达 StreamRender-H3 为海外对照线。#1/#3 为量子位编辑实测条目。</div>
+  </div></div>
+
+  <!-- 底部备注 -->
+  <div class="meta">
+    <div class="row"><span class="k">榜单口径</span><span class="v">增量信号榜——新上榜 · 增速异动 · 报道密度的复合强度排序，非权威 MAU 榜；优先级：<b>新发布 &gt; 硬数据 &gt; 权威月榜变化 &gt; 报道密度</b>；统计窗口 <b>2026-10-09 17:00 → 2026-10-16 09:15</b>（北京时间，周五 09:15 自动生成，窗口内报道即计为周信号，正文已标事件原始日期）；数据源：量子位 / GameLook / 游戏陀螺 / 扬帆出海（本期 12 条来源在生成时全量抓取核验）；<b>海外信号侧重</b>（海外新发布与海外市场表现加权，页面以蓝色「海外/出海」标签标注，本期 6 条）</span></div>
+    <div class="row"><span class="k">权威锚点</span><span class="v">AICPB 增速榜内嵌榜单数据<b>连续第五个月缺位</b>（页面仍无榜单 JSON，月度版本停在 2026-06）；海外导航锚点 Toolify 首页必扫完成——3D 类见 Quady3D（图/文/草图/多视角→3D 资产工作空间）新卡片、阿里 Wan 3.0 App 卡片在列，无 W41「Nano Banana 霸屏」式新异动</span></div>
+    <div class="row"><span class="k">变化标记</span><span class="v">新 本周新面孔（序号处绿底标注） / NEW 新入榜 / ↑n 上升 / ↓n 下降 / — 持平 / BASE 首期基线——本期对照 W41 周榜（2026-10-09 09:15 截稿）计算</span></div>
+  </div>
+
+  <div class="foot">AI周榜（20261009-20261016） · 2026-W42 · 数据基于公开报道，仅供内部参考</div>
+</div>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.onclick = function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+      document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+      document.getElementById(t.dataset.p).classList.add('on');
+    };
+  });
+</script>
+</body>
+</html>
